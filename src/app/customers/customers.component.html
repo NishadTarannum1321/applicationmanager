@@ -1,0 +1,45 @@
+<!--<p>
+  customers works!
+</p>-->
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">CustomerManager</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Card View <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">List View</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" >New Customer</a>
+      </li>
+    </ul>
+  </div>
+</nav>-->
+<div class="container">
+  <div>
+    <h3>Customer Manager</h3>
+  </div>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" (click)="loadPage('cardView')">CardView</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" (click) = "loadPage('listView')">listView</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">New Customer</a>
+        </li>
+      </ul>
+      <div *ngIf ="cardViewStatus" >
+          <app-customers-card [customersData] = 'customersData'></app-customers-card>
+        </div>
+        <div *ngIf ="listViewStatus">
+          <app-customers-grid></app-customers-grid>
+        </div>
+      </div>

@@ -1,0 +1,18 @@
+<!--<p>
+  customers-card works!
+</p>-->
+<div class="row">
+  <div class="col-sm-3" *ngFor="let cust of customersData">
+<div class="card">
+  <div class="card-header">
+      <a [routerLink]="['/customers',cust.id,'details']"> {{cust.firstName | uppercase}} {{cust.lastName | uppercase}}</a>
+      <a [routerLink]="['/customers',cust.id,'edit']"> edit </a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{cust.city}}</h5>
+    <p class="card-text">{{cust.state.name}}</p>
+    <a [routerLink] = "['/customers',cust.id,'orders']">Orders</a>
+  </div>
+</div>
+</div>
+</div>
